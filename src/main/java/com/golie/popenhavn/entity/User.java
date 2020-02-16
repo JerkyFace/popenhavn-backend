@@ -1,4 +1,4 @@
-package com.golie.popenhavn.core.User;
+package com.golie.popenhavn.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
