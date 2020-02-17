@@ -8,12 +8,11 @@ import java.util.UUID;
 
 @Getter
 @NoArgsConstructor
-@EqualsAndHashCode(of = {"id"})
+@EqualsAndHashCode(of = { "id" })
 public class User {
   private String id;
   private String email;
   private String userName;
-
 
   public User(String email, String userName) {
     this.id = UUID.randomUUID().toString();

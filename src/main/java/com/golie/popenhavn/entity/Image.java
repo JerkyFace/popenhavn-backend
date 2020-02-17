@@ -1,15 +1,19 @@
 package com.golie.popenhavn.entity;
 
-import javax.persistence.Column;
+import java.io.Serializable;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "popenhavn")
-public class Image {
+@Table(name = "image")
+public class Image implements Serializable {
+    private static final long serialVersionUID = 1l;
+
     @Id
-    @Column(name = "ID", nullable = false)
+    @GeneratedValue
     private long id;
 
     private String url;
