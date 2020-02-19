@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -13,13 +14,18 @@ public class Image implements Serializable {
     private static final long serialVersionUID = 1l;
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String url;
     private String tags;
 
-    public String getUrl() {
+    public Image(String url, String tags) {
+        this.url = url;
+        this.tags = tags;
+	}
+
+	public String getUrl() {
         return url;
     }
 

@@ -19,4 +19,14 @@ public class ImageServiceImpl implements ImageService {
     public Iterable<Image> findAll() {
         return imageRepository.findAll();
     }
+
+    @Override
+    public Image save(Image image) {
+        return imageRepository.save(image);
+    }
+    
+    @Override
+    public Iterable<Image> save(Iterable<Image> images){
+        return imageRepository.saveAll(images);
+    }
 }
