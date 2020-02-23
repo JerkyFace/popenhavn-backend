@@ -1,6 +1,7 @@
 package com.golie.popenhavn.entity;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,22 +11,23 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "image")
-public class Image implements Serializable {
-    private static final long serialVersionUID = 1l;
-
+public class Image {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
     private String url;
     private String tags;
+    private Date dateCreated;
 
-    public Image(String url, String tags) {
-        this.url = url;
-        this.tags = tags;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public String getUrl() {
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getUrl() {
         return url;
     }
 
@@ -40,4 +42,13 @@ public class Image implements Serializable {
     public void setTags(String tags) {
         this.tags = tags;
     }
+
+    public Date getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(Date dateCreated) {
+        this.dateCreated = dateCreated;
+    }
+
 }

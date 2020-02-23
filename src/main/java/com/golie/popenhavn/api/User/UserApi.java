@@ -1,4 +1,4 @@
-package com.golie.popenhavn.api;
+package com.golie.popenhavn.api.User;
 
 import com.golie.popenhavn.entity.User;
 import org.springframework.web.bind.annotation.GetMapping;

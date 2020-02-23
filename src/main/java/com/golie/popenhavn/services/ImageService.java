@@ -1,12 +1,32 @@
 package com.golie.popenhavn.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+
 import com.golie.popenhavn.entity.Image;
+import com.golie.popenhavn.repositories.ImageRepository;
 
-public interface ImageService {
-    public Iterable<Image> findAll();
+@Service
+public class ImageService {
+    @Autowired
+    ImageRepository imageRepository;
 
-    //insert single image
-    public Image save(Image image);
-    //insert multiple images
-    public Iterable<Image> save(Iterable<Image> images);
+    public List<Image> findAll() {
+        return imageRepository.findAll();
+    }
+
+    public Optional<Image> findById(Long id) {
+        return imageRepository.findById(id);
+    }
+
+    public Image save(Image saved) {
+        return imageRepository.save(saved);
+    }
+
+    public void deleteById(Long id) {
+        imageRepository.deleteById(id);
+    }
 }
